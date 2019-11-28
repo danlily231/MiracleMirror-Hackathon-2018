@@ -1,6 +1,6 @@
-Skip to content
+/*Skip to content
 
-Search or jump to…
+Search or jump toâ€¦
 
 Pull requests
 Issues
@@ -261,18 +261,3 @@ var config = {
 };
 
 /*************** DO NOT EDIT THE LINE BELOW ***************/
-if (typeof module !== "undefined") {module.exports = config;}
-
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Press h to open a hovercard with more details.
