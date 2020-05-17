@@ -14,7 +14,6 @@ Miracle-ShellHacks2018/config.js
 18c6d13  on Sep 24, 2018
 @huytheduong huytheduong Update config.js
 
-249 lines (220 sloc)  6.91 KB
 /* Magic Mirror Config Sample
  *
  * By Michael Teeuw http://michaelteeuw.nl
@@ -26,21 +25,23 @@ Miracle-ShellHacks2018/config.js
  */
 
 var config = {
-	address: "localhost", // Address to listen on, can be:
+	address: "localhost", // Address to listen on, can be
+
 	                      // - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 	                      // - another specific IPv4/6 to listen on a specific interface
 	                      // - "", "0.0.0.0", "::" to listen on any interface
 	                      // Default, when address config is left out, is "localhost"
 	port: 8080,
 	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1"], // Set [] to allow all IP addresses
+	
 	                                                       // or add a specific IPv4 of 192.168.1.5 :
 	                                                       // ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:192.168.1.5"],
 	                                                       // or IPv4 range of 192.168.3.0 --> 192.168.3.15 use CIDR format :
 	                                                       // ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:192.168.3.0/28"],
 
 	language: "en",
-	timeFormat: 24,
-	units: "metric",
+	timeFormat: 12,
+	units: "imperial",
 
 	modules: [
 		{
@@ -67,197 +68,82 @@ var config = {
 				]
 			}
 		},
-
-
-		//3 DAYS WEATHER FORECAST
-		{
-    			module:     "MMM-3Day-Forecast",
-    			position:   "top_left",
-				config: {
-			api_key:    "1f500d3a475****************",
-			lat:        25.7825453,
-			lon:        -80.2994988,
-			units:      'M',
-			lang:       'en',
-			interval:   900000
-			}
-		},
-
-		//COMPLIMENTS
 		{
 			module: "compliments",
-			position: "lower_third"
+			position: "bottom_bar"
+		
 		},
-
-		//CURRENT WEATHER
 		{
 			module: "currentweather",
-			position: "top_right",
+			position: "top_left",
 			config: {
-				location: "Miami",
-				locationID: "5162774",  //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: "api.openweathermap.org/data/2.5/forecast?id=****************"
+				location: "Tampa",
+				locationID: "4174757",  //ID from http://www.openweathermap.org/help/city_list.txt
+				appid: "8c220d3303f0b5b410559c8477bfeb1d"
 			}
 		},
-
-		//WEATHER FORECAST WITH LOCATION
 		{
 			module: "weatherforecast",
 			position: "top_right",
 			header: "Weather Forecast",
 			config: {
-				location: "Miami",
-				locationID: "5162774",  //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: "api.openweathermap.org/data/2.5/forecast?id=*****************"
+				location: "Tampa",
+				locationID: "4174757",  //ID from http://www.openweathermap.org/help/city_list.txt
+				appid: "8c220d3303f0b5b410559c8477bfeb1d"
 			}
 		},
-
-		//NEW YORK TIME NEWS REALTIME
+		
 		{
-			module: "newsfeed",
-			position: "bottom_bar",
+  			module: "MMM-NowPlayingOnSpotify",
+  			position: "top_left",
+
 			config: {
-				feeds: [
-					{
-						title: "New York Times",
-						url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-					}
-				],
-				showSourceTitle: true,
-				showPublishDate: true
+			clientID: "38947705a7144687ba3649f30098958e",
+			clientSecret: "d5bc90cc12df443082b0cef58d6072f7",
+			accessToken: "BQCh6wBzU882K8si74yTs6hpcsMe_HYduVjidmaQfJjuu-37DPjeKKlmglWtzTk2U8mEejfqabDOmaX0js8IOtZNu1H5v985SKgvtRhiN8ODUNrEPim73NQbtuLv9QXiZWXtS3WIIqQhcrJ1ksip5_xRKRN3huXmA9Ie1LG3pw",
+			refreshToken: "AQCaMTI5fdw8Lb1NjNvqw7ZueHGLVnpYMkmnvsyyvUb2bnOKBOa1iIYSA02ldhPWj_vlg5Fj4be3Q4iwL_igXx2g-ERHpcxHgh-s283o9sTIb6gvvevsT-haR7Im71d1IoM"
 			}
 		},
-
-		/*EARTH ROTATING - GLOBE*/
 		{
-			module: 'MMM-Globe',
-        		/*header: 'robstechlog.com',*/
-        		position: 'lower_third',
-        		config: {
-            		size:'medium',
-			dayLength: 24,
-			viewAngle: 30,
-			introLinesDuration: 2000,
-			receiveExternalLocation: 0,
-
-			location: [
-
-					{lat:25.7825453, lng: -80.2994988, label: "Miami"},
-					{lat:27.9941986, lng: -82.7344711, label: "Tampa"},
-					{lat:34.0207305, lng: -118.691921, label: "LosAngeles"},
-					{lat:40.6976701, lng: -74.2598665, label: "New York"},
-					{lat:51.4244208, lng: -0.3607223, label: "London"},
-					{lat:35.6735408, lng: 139.5703032, label: "Tokyo"},
-					{lat:-33.8473567, lng: 150.6517899, label: "Sydney"},
-					{lat:-33.9230997, lng: 18.4147362, label: "Cape Town"},
-				]
-            			}
+            		module: 'MMM-CoinMarketCap',
+            		position: "top_left",
+            		header: "Cryptocurrencies",
+            		config: {
+                	apiKey: '117f57c1-8233-446c-9b1e-4282aace00ed',
+                	currencies: ['bitcoin', 'ethereum', 'litecoin', 'ripple'],
+                	view: 'graphWithChanges',
+                	conversion: 'CAD',
+                // See below for more Configuration Options
+            		}
         	},
-
-		//A YOUTUBE TAB
 		{
-		module: 'MMM-iFrame',
-		position: 'lower_third',	// This can be any of the regions.
-		config: {
-			// See 'Configuration options' for more information.
-				url: ["https://youtube.com"],  // as many URLs you want or you can just ["ENTER IN URL"] if single URL.
-				updateInterval: 0.5 * 60 * 1000, // rotate URLs every 30 seconds
-				width: "100%", // Optional. Default: 100%
-				height: "100px" //Optional. Default: 100px
-			}
+		  //disabled:true,
+		  module: "MMM-AVStock",
+		  position: "top_left",
+		  config: {
+		  apiKey : "A33DV7YTQTD3KMOK",
+		  symbols : ["aapl", "GOOGL", "005930.KS"],
+		 	}
 		},
 
-		//RANDOM QUOTES
+		//corona virus case in the world
 		{
-		module: 'random_quotes',
-		position: 'lower_third',
-		config: {
-						// The config property is optional
-						// Without a config, a random quote is shown,
-						// selected from all of the categories available.
+		    module: "MMM-COVID19",
+		    position: "top_left",
+		    config: {
+		    updateInterval: 300000,
+		    worldStats: true,
+		    delta: true,
+		    lastUpdateInfo: true,
+		    countries: [ "Argentina", "China", "Italy", "Spain" ],
+		    headerRowClass: "small",
+		    rapidapiKey : "ada62d22e5msh53fbf0d0ce9e051p111aaejsn3c6403f70028" // this is an example, do not try to use it for real
 			}
-		},
-
-		/*TRAFFIC EXPECTED TIME WITH GOOGLE CLOUD API*/
-		{
-		module: 'MMM-Traffic',
-		position: 'top_right',
-		classes: 'dimmed medium', //optional, default is 'bright medium', only applies to commute info not route_name
-		config: {
-		api_key: '**********-WJJVxU-********Tp72H-********',
-		mode: 'Driving',
-		origin: '11200 SW 8th St, Miami, FL 33199',
-		destination: '4202 E Fowler Ave, Tampa, FL 33620',
-		mon_destination: '4000 Central Florida Blvd, Orlando, FL 32816',
-		fri_destination: '501 E High St, Oxford, OH 45056',
-		//arrival_time: '0800', //optional, but needs to be in 24 hour time if used.
-		route_name: 'Home to Work',
-		changeColor: true,
-		showGreen: false,
-		limitYellow: 5, //Greater than 5% of journey time due to traffic
-		limitRed: 20, //Greater than 20% of journey time due to traffic
-		traffic_model: 'pessimistic',
-		interval: 120000 //2 minutes
-			}
-		},
-
-		//SPOTIFY DISPLAY WITH LAST.FM API
-		{
-		module: 'MMM-Scrobbler',
-
-		position: 'top_left',
-		config: {
-
-		username: 'huyduong',
-
-		apikey: 'b***********a0724b558******',
-
-		//time interval to search for new song (every 15 seconds)
-		updateInterval: 5 * 1000,
-		//how often should we try to retrieve a song if not listening
-		delayCount: 5,
-		//time interval to search for new song if the 5 times not listening is received.
-		//set this to the same number as updateInterval to ignore this option
-		delayInterval: 120*1000,
-		animationSpeed: 1000,
-		showAlbumArt: true,
-	    	showMetaData: true,
-		//Determines the position of the meta text. Possible values: top, bottom, left, right
-		alignment: "bottom",
-		}
-
-		},
-
-		//SCREEN CAST - YOUTUBE VIDEOS
-		{
-		module: 'MMM-Screencast',
-		position: 'center', // This position is for a hidden <div /> and not the screencast window
-		config: {
-			position: 'center',
-			height: 300,
-			width: 500,
-			}
-        	},
-
-                //****FIND IPHONE********//
-		{
-        		disabled: false,
-        		module: 'MMM-FMI',
-        		header: "",                                // standard header, underlined
-       			position: 'bottom_center',
-        		config: {
-            		email: "*********@gmail.com",
-            		pass: "**********",
-            		lat: "25.759979",                     // your latitude
-            		lon: "-80.374082",                    // your longitude
-            		title: "",                            // Use instead of header. Not underlined!
-            		maxWidth: "400px",
-				}
-		  },
-
-
+  		},
+		
 	]
 
 };
 
 /*************** DO NOT EDIT THE LINE BELOW ***************/
+if (typeof module !== "undefined") {module.exports = config;}
