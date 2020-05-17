@@ -79,7 +79,7 @@ var config = {
 			config: {
 				location: "Tampa",
 				locationID: "4174757",  //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: "8c220d3303f0b5b410559c8477bfeb1d"
+				appid: "8c220d3303f0b5b41***************"
 			}
 		},
 		{
@@ -89,7 +89,7 @@ var config = {
 			config: {
 				location: "Tampa",
 				locationID: "4174757",  //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: "8c220d3303f0b5b410559c8477bfeb1d"
+				appid: "8c220d3303f0b5b41***************"
 			}
 		},
 		
@@ -98,10 +98,10 @@ var config = {
   			position: "top_left",
 
 			config: {
-			clientID: "38947705a7144687ba3649f30098958e",
-			clientSecret: "d5bc90cc12df443082b0cef58d6072f7",
-			accessToken: "BQCh6wBzU882K8si74yTs6hpcsMe_HYduVjidmaQfJjuu-37DPjeKKlmglWtzTk2U8mEejfqabDOmaX0js8IOtZNu1H5v985SKgvtRhiN8ODUNrEPim73NQbtuLv9QXiZWXtS3WIIqQhcrJ1ksip5_xRKRN3huXmA9Ie1LG3pw",
-			refreshToken: "AQCaMTI5fdw8Lb1NjNvqw7ZueHGLVnpYMkmnvsyyvUb2bnOKBOa1iIYSA02ldhPWj_vlg5Fj4be3Q4iwL_igXx2g-ERHpcxHgh-s283o9sTIb6gvvevsT-haR7Im71d1IoM"
+			clientID: "38947705a7144687b***************",
+			clientSecret: "d5bc90cc12df4430****************",
+			accessToken: "BQCh6wBzU882K8si74yTs6hpcsMe_HYduVjidmaQfJjuu-37DPjeKKlmglWtzTk2U8mEejfqabDOmaX0js8IOtZNu1H5v985SKgvtRhiN8ODUNrEPim73NQbtuLv9QXiZWXtS3WIIqQhcrJ**************",
+			refreshToken: "AQCaMTI5fdw8Lb1NjNvqw7ZueHGLVnpYMkmnvsyyvUb2bnOKBOa1iIYSA02ldhPWj_vlg5Fj4be3Q4iwL_igXx2g-ERHpcxHgh-s283o9sTIb6*******************"
 			}
 		},
 		{
@@ -109,7 +109,7 @@ var config = {
             		position: "top_left",
             		header: "Cryptocurrencies",
             		config: {
-                	apiKey: '117f57c1-8233-446c-9b1e-4282aace00ed',
+                	apiKey: '117f57c1-8233-446c-9b1e-*************',
                 	currencies: ['bitcoin', 'ethereum', 'litecoin', 'ripple'],
                 	view: 'graphWithChanges',
                 	conversion: 'CAD',
@@ -121,7 +121,7 @@ var config = {
 		  module: "MMM-AVStock",
 		  position: "top_left",
 		  config: {
-		  apiKey : "A33DV7YTQTD3KMOK",
+		  apiKey : "A33DV7*************",
 		  symbols : ["aapl", "GOOGL", "005930.KS"],
 		 	}
 		},
@@ -137,7 +137,7 @@ var config = {
 		    lastUpdateInfo: true,
 		    countries: [ "Argentina", "China", "Italy", "Spain" ],
 		    headerRowClass: "small",
-		    rapidapiKey : "ada62d22e5msh53fbf0d0ce9e051p111aaejsn3c6403f70028" // this is an example, do not try to use it for real
+		    rapidapiKey : "ada62d22e5msh53fbf0d0ce9e051****************" // this is an example, do not try to use it for real
 			}
   		},
 		
